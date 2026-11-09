@@ -1,0 +1,479 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Котбуль 2019</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700;900&display=swap">
+<style>
+/* Layout: вечерний Сан-Франциско. Плотная «бенто»-сетка карточек, тяжёлый круглый заголовок, фонарный оранжевый акцент на индиго. */
+:root{
+  --bg:#eceffa; --surface:#ffffff; --surface2:#e0e5f7; --fg:#1b1f45; --muted:#555b86;
+  --accent:#e8630f; --accent-ink:#1b1f45; --accent2:#12877b; --line:#c9d0ec;
+  --sky1:#ffd9a8; --sky2:#f7a9a0; --sky3:#8f8fd6; --hill1:#7b7fc4; --hill2:#4f548f; --hill3:#2b2f63;
+  --win:#ffcf6b; --moon:#fff3dc;
+  --f-display:'Unbounded','Arial Black',system-ui,sans-serif;
+  --f-body:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --r:20px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101229; --surface:#1a1d3d; --surface2:#242852; --fg:#eceefc; --muted:#a4a9d4;
+    --accent:#ff9f4a; --accent-ink:#13152e; --accent2:#5fd3c4; --line:#31366a;
+    --sky1:#f6a56a; --sky2:#b2538f; --sky3:#2b2a6b; --hill1:#3b3f85; --hill2:#272b61; --hill3:#161940;
+    --win:#ffc766; --moon:#fff0d2; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101229; --surface:#1a1d3d; --surface2:#242852; --fg:#eceefc; --muted:#a4a9d4;
+  --accent:#ff9f4a; --accent-ink:#13152e; --accent2:#5fd3c4; --line:#31366a;
+  --sky1:#f6a56a; --sky2:#b2538f; --sky3:#2b2a6b; --hill1:#3b3f85; --hill2:#272b61; --hill3:#161940;
+  --win:#ffc766; --moon:#fff0d2; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;margin:0;
+  padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:1180px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:10px}
+.logo{font-family:var(--f-display);font-weight:900;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:8px;flex:none}
+.logo svg{width:22px;height:22px;fill:var(--accent)}
+.nav{display:flex;gap:6px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:14px;padding:7px 12px;border-radius:99px;color:var(--muted)}
+.nav a:hover{background:var(--surface2);color:var(--fg)}
+.theme{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:17px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;margin-top:18px}
+.hero-text{background:var(--surface);border-radius:var(--r);padding:clamp(20px,3.4vw,38px);display:flex;flex-direction:column;gap:18px;min-width:0;border:1px solid var(--line)}
+.kicker{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2)}
+h1{font-size:clamp(40px,7.2vw,88px);font-weight:900;letter-spacing:-.02em}
+h1 small{display:block;font-size:.3em;font-weight:500;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+.lead{font-size:clamp(16px,1.6vw,19px);max-width:56ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--surface2);border-radius:99px;padding:6px 14px;font-size:14px;font-weight:600}
+.chip b{color:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:14px;background:var(--accent);color:var(--accent-ink);border:0;cursor:pointer;font:inherit;font-weight:700}
+.btn.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)}
+.btn:hover{filter:brightness(1.06)}
+.scene{border-radius:var(--r);overflow:hidden;min-height:340px;position:relative;background:var(--sky3)}
+.scene svg{display:block;width:100%;height:100%;min-height:340px}
+.scene .cap{position:absolute;left:14px;bottom:12px;right:14px;font-size:12px;font-weight:600;color:#fff;opacity:.85;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+
+/* sections */
+section{margin-top:44px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+h2{font-size:clamp(26px,4vw,40px);font-weight:900}
+.sec-h p{color:var(--muted);max-width:52ch}
+.grid{display:grid;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-width:0}
+.card h3{font-size:19px;margin-bottom:10px}
+.card p+p{margin-top:10px}
+.muted{color:var(--muted)}
+
+/* about */
+.about{grid-template-columns:repeat(12,1fr)}
+.plot{grid-column:span 7}
+.facts{grid-column:span 5;background:var(--surface2)}
+.facts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px}
+.facts dt{color:var(--muted);font-size:14px}
+.facts dd{margin:0;font-weight:600}
+.ending{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+.ending p[hidden]{display:none}
+.stat{grid-column:span 3;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.stat .n{font-family:var(--f-display);font-weight:900;font-size:clamp(34px,5vw,52px);color:var(--accent);line-height:1}
+.stat.alt .n{color:var(--accent2)}
+
+/* characters + making */
+.two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:3px 10px;border-radius:99px;margin-bottom:12px}
+.tag.t2{background:var(--accent2);color:var(--accent-ink)}
+.people{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.person .role{font-size:13px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em}
+.person .name{font-family:var(--f-display);font-size:19px;font-weight:700;margin:4px 0 8px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.tl li{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:var(--r);padding:16px 18px}
+.tl li:nth-child(even){border-top-color:var(--accent2)}
+.tl time{font-family:var(--f-display);font-weight:700;font-size:15px;display:block;margin-bottom:6px}
+
+/* opinion */
+.opinion{background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--r)*1.4);padding:clamp(22px,4vw,48px);display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(18px,3vw,40px)}
+.opinion h2{font-size:clamp(30px,5vw,54px);margin-bottom:16px}
+.opinion .body p{font-size:clamp(16px,1.5vw,18px)}
+.opinion .body p+p{margin-top:14px}
+.verdict{background:var(--accent-ink);color:var(--fg);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:16px;align-self:start}
+:root:not([data-theme="dark"]) .verdict{--fg:#eceefc;--muted:#a4a9d4}
+.score{font-family:var(--f-display);font-weight:900;font-size:64px;line-height:1;color:var(--accent)}
+.score span{font-size:24px;color:var(--muted)}
+.paws{display:flex;gap:6px}
+.paws svg{width:26px;height:26px;fill:var(--accent)}
+.paws svg.off{fill:var(--muted);opacity:.4}
+.verdict h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--f-body);font-weight:700;margin-bottom:6px}
+.verdict ul{margin:0;padding-left:18px;font-size:15px;color:var(--fg)}
+.verdict li+li{margin-top:4px}
+.sig{margin-top:18px;font-weight:700;font-size:15px}
+
+/* more shorts */
+.shorts{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.shorts .card{padding:16px 18px}
+.shorts h3{font-size:16px;margin-bottom:4px}
+.shorts .y{font-size:13px;color:var(--accent2);font-weight:700}
+.shorts .card.me{background:var(--surface2);border-color:var(--accent)}
+
+/* quiz */
+.quiz{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.q-main{min-width:0}
+.q-main h3{font-size:clamp(18px,2.2vw,24px);margin-bottom:16px;font-family:var(--f-display)}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;font:inherit;font-weight:600;color:var(--fg);background:var(--surface2);border:2px solid transparent;border-radius:14px;padding:12px 16px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt.ok{border-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 22%,var(--surface))}
+.opt.bad{border-color:#d9435a;background:color-mix(in srgb,#d9435a 18%,var(--surface))}
+.opt:disabled{cursor:default}
+.q-side{display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.q-bar{height:10px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.q-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.q-note{min-height:3.2em;font-size:15px}
+.q-score{font-family:var(--f-display);font-size:34px;font-weight:900;color:var(--accent)}
+
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .scene,.scene svg{min-height:280px}
+  .plot,.facts{grid-column:span 12}
+  .stat{grid-column:span 6}
+  .opinion{grid-template-columns:1fr}
+  .quiz{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .logo span{display:none}
+  .stat{grid-column:span 12}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.q-bar i{transition:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paw" viewBox="0 0 64 64"><ellipse cx="14" cy="26" rx="7" ry="9"/><ellipse cx="27" cy="14" rx="7" ry="10"/><ellipse cx="42" cy="14" rx="7" ry="10"/><ellipse cx="53" cy="27" rx="7" ry="9"/><path d="M32 30c-9 0-18 9-18 17 0 6 5 9 10 9 3 0 5-1 8-1s5 1 8 1c5 0 10-3 10-9 0-8-9-17-18-17z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><svg><use href="#paw"/></svg><span>Котбуль</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#about">О мультфильме</a>
+      <a href="#making">Как сделан</a>
+      <a href="#people">Создатели</a>
+      <a href="#timeline">Хронология</a>
+      <a href="#opinion">Моё мнение</a>
+      <a href="#quiz">Викторина</a>
+      <a href="#more">Ещё SparkShorts</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Переключить тему">◐</button>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+<div class="hero">
+  <div class="hero-text">
+    <div class="kicker">Pixar SparkShorts · 2019</div>
+    <h1>Котбуль<small>Kitbull · короткометражный мультфильм</small></h1>
+    <p class="lead">История дружбы бездомного котёнка и питбуля, которого держат на цепи. Девять минут рисованной анимации без единого слова, после которых сложно не растрогаться.</p>
+    <div class="chips">
+      <span class="chip"><b>≈9</b> минут</span>
+      <span class="chip">2D, нарисован вручную</span>
+      <span class="chip">Номинант <b>«Оскара»</b></span>
+      <span class="chip">Сан-Франциско</span>
+    </div>
+    <div class="btns">
+      <a class="btn" href="#opinion">Читать моё мнение</a>
+      <a class="btn ghost" href="#quiz">Пройти викторину</a>
+    </div>
+  </div>
+  <div class="scene" role="img" aria-label="Иллюстрация: вечерний Сан-Франциско, холм с домами, фонарь и луна">
+    <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color:var(--sky3)"/>
+          <stop offset=".6" style="stop-color:var(--sky2)"/>
+          <stop offset="1" style="stop-color:var(--sky1)"/>
+        </linearGradient>
+        <pattern id="fence" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <path d="M0 0H22M0 0V22" stroke="var(--hill3)" stroke-width="1.6" fill="none" opacity=".75"/>
+        </pattern>
+      </defs>
+      <rect width="600" height="440" fill="url(#sky)"/>
+      <circle cx="470" cy="110" r="46" style="fill:var(--moon)" opacity=".95"/>
+      <g style="fill:var(--moon)" opacity=".8">
+        <circle cx="60" cy="50" r="2"/><circle cx="140" cy="90" r="1.6"/><circle cx="230" cy="40" r="2"/><circle cx="320" cy="75" r="1.5"/><circle cx="380" cy="30" r="2"/><circle cx="560" cy="40" r="1.8"/><circle cx="100" cy="150" r="1.4"/><circle cx="290" cy="140" r="1.6"/>
+      </g>
+      <path d="M0 250 C90 200 170 220 260 245 C350 270 450 210 600 235 V440 H0Z" style="fill:var(--hill1)"/>
+      <g style="fill:var(--hill2)">
+        <rect x="40" y="226" width="34" height="44"/><path d="M36 226 L57 206 L78 226Z"/>
+        <rect x="90" y="236" width="30" height="40"/><rect x="128" y="230" width="38" height="48"/><path d="M124 230 L147 210 L170 230Z"/>
+        <rect x="190" y="244" width="30" height="36"/><rect x="226" y="248" width="36" height="34"/>
+        <rect x="480" y="218" width="36" height="46"/><path d="M476 218 L498 198 L520 218Z"/>
+        <rect x="528" y="222" width="30" height="44"/>
+      </g>
+      <g style="fill:var(--win)">
+        <rect x="50" y="238" width="8" height="10"/><rect x="62" y="252" width="8" height="10"/><rect x="100" y="248" width="8" height="10"/>
+        <rect x="136" y="244" width="8" height="10"/><rect x="150" y="258" width="8" height="10"/><rect x="198" y="256" width="8" height="10"/>
+        <rect x="236" y="260" width="8" height="10"/><rect x="490" y="232" width="8" height="10"/><rect x="504" y="246" width="8" height="10"/><rect x="538" y="236" width="8" height="10"/>
+      </g>
+      <path d="M0 320 C120 280 230 300 330 318 C430 336 520 290 600 300 V440 H0Z" style="fill:var(--hill2)"/>
+      <g style="fill:var(--hill3)">
+        <rect x="20" y="282" width="46" height="60"/><path d="M14 282 L43 256 L72 282Z"/>
+        <rect x="80" y="294" width="40" height="52"/><rect x="132" y="300" width="50" height="46"/><path d="M126 300 L157 276 L188 300Z"/>
+        <rect x="380" y="310" width="44" height="50"/><rect x="432" y="296" width="48" height="64"/><path d="M426 296 L456 270 L486 296Z"/>
+        <rect x="496" y="304" width="40" height="52"/><rect x="544" y="296" width="46" height="60"/>
+      </g>
+      <g style="fill:var(--win)">
+        <rect x="30" y="296" width="9" height="12"/><rect x="48" y="314" width="9" height="12"/><rect x="92" y="308" width="9" height="12"/>
+        <rect x="144" y="314" width="9" height="12"/><rect x="162" y="326" width="9" height="12"/><rect x="392" y="324" width="9" height="12"/>
+        <rect x="444" y="310" width="9" height="12"/><rect x="460" y="330" width="9" height="12"/><rect x="508" y="320" width="9" height="12"/><rect x="556" y="312" width="9" height="12"/>
+      </g>
+      <path d="M0 380 C140 350 260 372 380 366 C480 360 540 346 600 352 V440 H0Z" style="fill:var(--hill3)"/>
+      <rect x="0" y="352" width="600" height="88" fill="url(#fence)"/>
+      <g style="fill:var(--hill3)"><rect x="0" y="346" width="600" height="6"/><rect x="0" y="426" width="600" height="14"/></g>
+      <g>
+        <rect x="262" y="236" width="6" height="150" style="fill:var(--hill3)"/>
+        <rect x="248" y="232" width="34" height="8" rx="4" style="fill:var(--hill3)"/>
+        <circle cx="252" cy="244" r="22" style="fill:var(--win)" opacity=".28"/>
+        <circle cx="252" cy="244" r="7" style="fill:var(--win)"/>
+      </g>
+      <g style="fill:var(--moon)" opacity=".5">
+        <use href="#paw" x="120" y="392" width="24" height="24" transform="rotate(-18 132 404)"/>
+        <use href="#paw" x="168" y="378" width="24" height="24" transform="rotate(-8 180 390)"/>
+        <use href="#paw" x="216" y="394" width="24" height="24" transform="rotate(-20 228 406)"/>
+        <use href="#paw" x="300" y="388" width="24" height="24" transform="rotate(12 312 400)"/>
+        <use href="#paw" x="350" y="376" width="24" height="24" transform="rotate(6 362 388)"/>
+      </g>
+    </svg>
+    <div class="cap">Мишен-дистрикт и холм Бернал: места, где происходит действие</div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="sec-h"><h2>О мультфильме</h2><p>Коротко о сюжете, команде и месте «Котбуля» среди других работ Pixar.</p></div>
+  <div class="grid about">
+    <div class="card plot">
+      <h3>Сюжет</h3>
+      <p>Маленький чёрный котёнок живёт среди мусорных баков в сан-францисском районе Мишен. Он привык рассчитывать только на себя и никого не подпускает близко. Однажды он замечает за зданием питбуля, которого держат на цепи и заставляют драться.</p>
+      <p>Сначала котёнок и пёс настороженно присматриваются друг к другу. Потом котёнок решает рискнуть и подойти поближе, а дальше между ними появляется то, чего не было у обоих: доверие.</p>
+      <div class="ending">
+        <button class="btn ghost" id="spoiler" type="button" aria-expanded="false" aria-controls="end-text">Показать концовку (спойлер)</button>
+        <p id="end-text" hidden style="margin-top:12px">После тяжёлой ночи, когда пёс сильно пострадал, котёнок остаётся рядом и согревает его. Вместе они сбегают со двора, а прохожий, увидев их привязанность, забирает обоих домой. Заканчивается мультфильм на холме Бернал, откуда открывается вид на город.</p>
+      </div>
+    </div>
+    <div class="card facts">
+      <h3>Карточка фильма</h3>
+      <dl>
+        <dt>Название</dt><dd>Kitbull (Котбуль)</dd>
+        <dt>Студия</dt><dd>Pixar Animation Studios</dd>
+        <dt>Прокат</dt><dd>Walt Disney Studios</dd>
+        <dt>Режиссёр</dt><dd>Росана Салливан</dd>
+        <dt>Продюсер</dt><dd>Кэтрин Хендриксон</dd>
+        <dt>Композитор</dt><dd>Эндрю Джименес</dd>
+        <dt>Монтаж</dt><dd>Кэти Шефер Бишоп</dd>
+        <dt>Длительность</dt><dd>около 9 минут</dd>
+        <dt>Язык</dt><dd>без диалогов</dd>
+      </dl>
+    </div>
+    <div class="card stat"><div class="n">100 млн+</div><p class="muted">просмотров на YouTube-канале Pixar (данные на 2023 год)</p></div>
+    <div class="card stat alt"><div class="n">№3</div><p class="muted">по счёту короткометражка в программе SparkShorts</p></div>
+    <div class="card stat"><div class="n">6 мес.</div><p class="muted">давали сотрудникам Pixar на создание фильма в этой программе</p></div>
+    <div class="card stat alt"><div class="n">2D</div><p class="muted">рисунок и краска вручную среди привычной 3D-анимации студии</p></div>
+  </div>
+</section>
+
+<section id="making">
+  <div class="sec-h"><h2>Как его сделали</h2><p>Рисованная анимация на студии, которая известна компьютерной графикой.</p></div>
+  <div class="grid two">
+    <div class="card">
+      <span class="tag">История идеи</span>
+      <h3>От наброска до фильма</h3>
+      <p>Всё началось в 2013 году с наброска чёрного котёнка. Росана Салливан тогда работала над полнометражным фильмом Pixar, а вдохновил её ролик с кошкой, который показал коллега.</p>
+      <p>Питбулей она знала по работе в приютах ещё в студенческие годы и видела, как несправедливо к этим собакам относятся. Сама Росана в детстве была застенчивой и узнаёт себя в котёнке, который боится показать слабость.</p>
+    </div>
+    <div class="card">
+      <span class="tag t2">Техника</span>
+      <h3>2D внутри 3D-конвейера</h3>
+      <p>Персонажей нарисовали и раскрасили вручную. Это сложно сочетается с конвейером студии, поэтому героев рисовали на отдельных слоях, фоны писали красками, а потом всё соединяли при композитинге.</p>
+      <p>Чтобы увидеть район глазами котёнка, команда ходила по Мишену с селфи-палкой, опущенной почти к земле. Звукорежиссёры добавили гул поездов метро BART.</p>
+    </div>
+    <div class="card">
+      <span class="tag">SparkShorts</span>
+      <h3>Программа для новых голосов</h3>
+      <p>SparkShorts даёт сотрудникам Pixar шесть месяцев и небольшой бюджет на собственный короткометражный фильм. Салливан называет программу «огромным шагом вперёд», потому что она поддерживает непривычные и малоизвестные голоса.</p>
+      <p>Над историей ей помогали Доми Ши, Питер Сон и Кристен Лестер.</p>
+    </div>
+  </div>
+</section>
+
+<section id="people">
+  <div class="sec-h"><h2>Создатели</h2><p>Небольшая команда, которая сделала большой эмоциональный фильм.</p></div>
+  <div class="grid people">
+    <div class="card person"><div class="role">Сценарий и режиссура</div><div class="name">Росана Салливан</div><p class="muted">Придумала историю и стала её режиссёром. Получила премию Humanitas за короткометражный фильм.</p></div>
+    <div class="card person"><div class="role">Продюсер</div><div class="name">Кэтрин Хендриксон</div><p class="muted">Вместе с Салливан начала развивать идею в нерабочее время, ещё до появления SparkShorts.</p></div>
+    <div class="card person"><div class="role">Музыка</div><div class="name">Эндрю Джименес</div><p class="muted">Композитор короткометражки Pixar «Человек-оркестр». Саундтрек из 16 треков вышел 5 апреля 2019 года.</p></div>
+    <div class="card person"><div class="role">Оператор</div><div class="name">Арджун Рихан</div><p class="muted">Отвечал за кинематографию фильма.</p></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="sec-h"><h2>Хронология</h2><p>Как мультфильм шёл к зрителю и к «Оскару».</p></div>
+  <ol class="tl">
+    <li><time>18 января 2019</time>Премьера в театре «Эль Капитан» вместе с «Purl» и «Smash and Grab».</li>
+    <li><time>18 февраля 2019</time>Фильм выходит на YouTube-канале Pixar и быстро набирает просмотры.</li>
+    <li><time>5 апреля 2019</time>Выходит саундтрек Эндрю Джименеса.</li>
+    <li><time>12 ноября 2019</time>«Котбуль» появляется на Disney+.</li>
+    <li><time>24 января 2020</time>Росана Салливан получает премию Humanitas.</li>
+    <li><time>9 февраля 2020</time>Номинация на «Оскар» за лучший анимационный короткометражный фильм. Статуэтку получил «Hair Love».</li>
+    <li><time>9 февраля 2024</time>Показ в кинотеатрах перед «Я краснею».</li>
+  </ol>
+</section>
+
+<section id="opinion">
+  <div class="opinion">
+    <div class="body">
+      <h2>Моё мнение</h2>
+      <p>Я включил «Котбуль» без особых ожиданий, ведь это всего девять минут, а получил один из самых сильных мультфильмов, что я видел. Здесь нет ни одной реплики, но всё понятно: по взгляду, по ушам, по тому, как котёнок делает шаг вперёд и тут же отскакивает назад.</p>
+      <p>Больше всего меня зацепило, что история не давит на жалость, а просто показывает двух одиноких существ. Котёнок злится, потому что боится, а пёс страшен только на первый взгляд. Когда они начинают доверять друг другу, это выглядит настоящим, а не придуманным ради красивого финала.</p>
+      <p>Отдельное удовольствие в рисунке. На фоне привычной объёмной анимации Pixar рисованная графика выглядит тёплой и живой, а город вечером получился таким, что хочется там оказаться. Музыка не выпячивается и помогает сцене, не заглушая её.</p>
+      <p>Единственное, чего мне не хватило, это времени: хотелось бы побыть с героями подольше. Но, возможно, именно поэтому фильм и запоминается. Я бы посоветовал его всем, особенно тем, кто думает, что мультфильмы про животных только для детей.</p>
+      <p class="sig">— Автор сайта</p>
+    </div>
+    <aside class="verdict">
+      <div>
+        <div class="score">9<span>/10</span></div>
+        <div class="paws" aria-label="Оценка 9 из 10">
+          <svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg class="off"><use href="#paw"/></svg>
+        </div>
+      </div>
+      <div>
+        <h3>Что понравилось</h3>
+        <ul><li>Эмоции без слов</li><li>Рисованная анимация</li><li>Атмосфера Сан-Франциско</li><li>Музыка и звук города</li></ul>
+      </div>
+      <div>
+        <h3>Чего не хватило</h3>
+        <ul><li>Хронометража: хочется продолжения</li></ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="sec-h"><h2>Викторина</h2><p>Пять вопросов, чтобы проверить, насколько внимательно вы читали сайт.</p></div>
+  <div class="quiz">
+    <div class="card q-main">
+      <h3 id="q-text"></h3>
+      <div class="opts" id="q-opts"></div>
+    </div>
+    <div class="card q-side">
+      <div>
+        <div class="muted" id="q-count" style="font-weight:600;margin-bottom:8px"></div>
+        <div class="q-bar"><i id="q-bar"></i></div>
+      </div>
+      <p class="q-note" id="q-note">Выберите ответ.</p>
+      <div>
+        <div class="q-score" id="q-score">0 / 5</div>
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn" id="q-next" type="button" disabled>Дальше</button>
+          <button class="btn ghost" id="q-reset" type="button">Начать заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="more">
+  <div class="sec-h"><h2>Ещё SparkShorts</h2><p>Если понравился «Котбуль», посмотрите другие работы из этой программы.</p></div>
+  <div class="grid shorts">
+    <div class="card"><div class="y">2019</div><h3>Purl</h3><p class="muted">Клубок пряжи пытается прижиться в офисе.</p></div>
+    <div class="card"><div class="y">2019</div><h3>Smash and Grab</h3><p class="muted">Два робота мечтают о побеге.</p></div>
+    <div class="card me"><div class="y">2019</div><h3>Kitbull</h3><p class="muted">Вы здесь: котёнок и питбуль.</p></div>
+    <div class="card"><div class="y">2019</div><h3>Float</h3><p class="muted">Отец и сын, который умеет парить.</p></div>
+    <div class="card"><div class="y">2020</div><h3>Loop</h3><p class="muted">Поездка на каноэ и разговор без слов.</p></div>
+    <div class="card"><div class="y">2020</div><h3>Burrow</h3><p class="muted">Крольчиха ищет себе тихую нору.</p></div>
+  </div>
+</section>
+
+<footer>
+  <span>Фан-сайт. Мультфильм «Котбуль» (Kitbull) принадлежит Pixar Animation Studios и Disney.</span>
+  <span>Сделано с любовью к рисованной анимации</span>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  /* тема */
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark' || (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+
+  /* спойлер */
+  var sp=document.getElementById('spoiler'),et=document.getElementById('end-text');
+  sp.addEventListener('click',function(){
+    var open=et.hidden;
+    et.hidden=!open;
+    sp.setAttribute('aria-expanded',String(open));
+    sp.textContent=open?'Скрыть концовку':'Показать концовку (спойлер)';
+  });
+
+  /* викторина */
+  var Q=[
+    {q:'Кто написал сценарий и срежиссировал «Котбуль»?',o:['Питер Сон','Росана Салливан','Доми Ши','Эндрю Джименес'],a:1,n:'Верно: Росана Салливан придумала историю и сняла её.'},
+    {q:'В каком районе Сан-Франциско живёт котёнок?',o:['Мишен','Чайна-таун','Хейт-Эшбери','Ноб-Хилл'],a:0,n:'Да, Мишен-дистрикт. Сама Салливан жила там после переезда.'},
+    {q:'В какой технике нарисован мультфильм?',o:['Объёмная 3D-графика','Кукольная анимация','Рисованная 2D-анимация','Пластилин'],a:2,n:'Всё нарисовано и раскрашено вручную, что редкость для Pixar.'},
+    {q:'На какую награду номинировали «Котбуль» в 2020 году?',o:['«Золотой глобус»','«Оскар»','«Каннский лев»','«Сезар»'],a:1,n:'Номинация на «Оскар» как лучший анимационный короткометражный фильм.'},
+    {q:'Каким по счёту «Котбуль» стал в программе SparkShorts?',o:['Первым','Вторым','Третьим','Пятым'],a:2,n:'Он вышел третьим, после «Purl» и «Smash and Grab».'}
+  ];
+  var i=0,score=0,done=false;
+  var qt=document.getElementById('q-text'),qo=document.getElementById('q-opts'),qc=document.getElementById('q-count'),
+      qb=document.getElementById('q-bar'),qn=document.getElementById('q-note'),qs=document.getElementById('q-score'),
+      qnext=document.getElementById('q-next'),qreset=document.getElementById('q-reset');
+  function render(){
+    var cur=Q[i];done=false;
+    qt.textContent=cur.q;qo.innerHTML='';
+    qc.textContent='Вопрос '+(i+1)+' из '+Q.length;
+    qb.style.width=(i/Q.length*100)+'%';
+    qn.textContent='Выберите ответ.';
+    qnext.disabled=true;qnext.textContent=i===Q.length-1?'Результат':'Дальше';
+    cur.o.forEach(function(t,k){
+      var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;
+      b.addEventListener('click',function(){pick(k)});qo.appendChild(b);
+    });
+    qs.textContent=score+' / '+Q.length;
+  }
+  function pick(k){
+    if(done)return;done=true;
+    var cur=Q[i],btns=qo.querySelectorAll('.opt');
+    btns.forEach(function(b,j){b.disabled=true;if(j===cur.a)b.classList.add('ok');});
+    if(k===cur.a){score++;qn.textContent=cur.n;}else{btns[k].classList.add('bad');qn.textContent='Не совсем. '+cur.n;}
+    qs.textContent=score+' / '+Q.length;qnext.disabled=false;
+  }
+  function finish(){
+    qb.style.width='100%';qo.innerHTML='';
+    qt.textContent=score===Q.length?'Отлично, вы знаете «Котбуль» наизусть!':score>=3?'Хороший результат, вы внимательный зритель.':'Посмотрите мультфильм и попробуйте ещё раз.';
+    qc.textContent='Готово';qn.textContent='Ваш итог: '+score+' из '+Q.length+'.';qnext.disabled=true;
+  }
+  qnext.addEventListener('click',function(){i++;if(i>=Q.length)finish();else render();});
+  qreset.addEventListener('click',function(){i=0;score=0;render();});
+  render();
+})();
+</script>
+
+</body></html>
